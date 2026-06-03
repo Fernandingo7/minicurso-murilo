@@ -49,6 +49,7 @@
     /* ── Hero ──────────────────────────────────────────────────── */
 
     .hero {
+      position: relative;
       min-height: 420px;
       display: flex;
       align-items: flex-end;
@@ -62,15 +63,37 @@
       width: 100%;
     }
 
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.75) 38%, rgba(10,10,10,0.2) 60%, transparent 75%);
+      pointer-events: none;
+    }
+
     .hero .container {
+      position: relative;
+      z-index: 1;
       width: 100%;
+    }
+
+    .hero-content {
+      max-width: 520px;
     }
 
     @media (max-width: 767px) {
       .hero {
-        min-height: 340px;
+        min-height: 540px;
         padding-bottom: 36px;
         background-image: url("https://profmurilosoares.com.br/wp-content/uploads/2026/06/hero-s-m.webp");
+      }
+
+      .hero::before {
+        background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.1) 100%);
+      }
+
+      .hero-content {
+        max-width: 100%;
       }
     }
 
@@ -311,13 +334,15 @@
     <!-- ── Hero ──────────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <div class="hero-badge">Minicurso disponível</div>
-        <h1 class="hero-headline" id="hero-heading">
-          Seu acesso ao minicurso está liberado
-        </h1>
-        <p class="hero-sub">
-          As 4 aulas estão disponíveis abaixo. Assista no seu ritmo e chegue preparado para a imersão.
-        </p>
+        <div class="hero-content">
+          <div class="hero-badge">Minicurso disponível</div>
+          <h1 class="hero-headline" id="hero-heading">
+            Seu acesso ao minicurso está liberado
+          </h1>
+          <p class="hero-sub">
+            As 4 aulas estão disponíveis abaixo. Assista no seu ritmo e chegue preparado para a imersão.
+          </p>
+        </div>
       </div>
     </section>
 
