@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Minicurso Distinguishing no TST — 4 aulas disponíveis para assistir antes da imersão ao vivo.">
+  <title>Distinguishing no TST — Minicurso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Raleway", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #121212;
+      color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    /* ── Container ─────────────────────────────────────────────── */
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Eyebrow ───────────────────────────────────────────────── */
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #666666;
+    }
+
+    /* ── Hero ──────────────────────────────────────────────────── */
+
+    .hero {
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      padding-top: 0;
+      padding-bottom: 48px;
+      background-image: url("https://profmurilosoares.com.br/wp-content/uploads/2026/06/hero-s.webp");
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      border-bottom: 1px solid #222222;
+      width: 100%;
+    }
+
+    .hero .container {
+      width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        min-height: 340px;
+        padding-bottom: 36px;
+        background-image: url("https://profmurilosoares.com.br/wp-content/uploads/2026/06/hero-s-m.webp");
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: "Raleway", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #E0201F;
+      border: 1px solid #E0201F;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .hero-headline {
+      font-family: "Raleway", sans-serif;
+      font-size: clamp(26px, 4.5vw, 42px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      max-width: 20ch;
+      margin-bottom: 18px;
+    }
+
+    .hero-sub {
+      font-family: "Raleway", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #AAAAAA;
+      max-width: 52ch;
+    }
+
+    /* ── Lessons ───────────────────────────────────────────────── */
+
+    .lessons {
+      padding-top: 80px;
+      padding-bottom: 24px;
+    }
+
+    .lessons-eyebrow {
+      margin-bottom: 36px;
+    }
+
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .lesson-card {
+      background-color: #1F1F1F;
+      border: 1px solid #2A2A2A;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .embed-wrap {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      background-color: #0D0D0D;
+      overflow: hidden;
+    }
+
+    .embed-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .lesson-body {
+      padding: 22px 24px 28px;
+    }
+
+    .lesson-number {
+      font-family: "Raleway", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #555555;
+      margin-bottom: 10px;
+    }
+
+    .lesson-title {
+      font-family: "Raleway", sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      max-width: 38ch;
+    }
+
+    .lesson-desc {
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #888888;
+      max-width: 46ch;
+    }
+
+    @media (min-width: 768px) {
+      .lessons-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* ── CTA section ───────────────────────────────────────────── */
+
+    .cta {
+      margin-top: 80px;
+      padding-top: 88px;
+      padding-bottom: 80px;
+      background-color: #1A1A1A;
+      border-top: 6px solid #E0201F;
+    }
+
+    .cta-eyebrow {
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-family: "Raleway", sans-serif;
+      font-size: clamp(22px, 3.5vw, 38px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      max-width: 26ch;
+      margin-bottom: 18px;
+    }
+
+    .cta-body {
+      font-family: "Raleway", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #AAAAAA;
+      max-width: 56ch;
+      margin-bottom: 40px;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 22px 40px;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: linear-gradient(90deg, #8B100E 0%, #E0201F 60%);
+      border: 1px solid #FF284C;
+      border-radius: 30px;
+      box-shadow: 0px 8px 26px 0px rgba(255, 40, 76, 0.42);
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .cta-btn:hover {
+      opacity: 0.9;
+      box-shadow: 0px 12px 36px 0px rgba(255, 40, 76, 0.55);
+    }
+
+    .cta-btn:focus-visible {
+      outline: 2px solid #FF284C;
+      outline-offset: 4px;
+    }
+
+    @media (min-width: 768px) {
+      .cta-btn {
+        display: inline-block;
+        width: auto;
+      }
+    }
+
+    /* ── Reminder banner ───────────────────────────────────────── */
+
+    .reminder {
+      padding-top: 48px;
+      padding-bottom: 96px;
+      background-color: #121212;
+    }
+
+    .reminder-inner {
+      border-left: 3px solid #E0201F;
+      background-color: #FFFBEF;
+      border-radius: 0 4px 4px 0;
+      padding: 20px 24px;
+    }
+
+    .reminder-text {
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.68;
+      color: #7A4F07;
+      max-width: 65ch;
+    }
+
+    .reminder-text strong {
+      font-weight: 700;
+      color: #8B100E;
+    }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+
+    footer {
+      border-top: 1px solid #222222;
+      padding: 28px 0;
+      background-color: #121212;
+    }
+
+    .footer-text {
+      font-family: "Raleway", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #444444;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-badge">Minicurso disponível</div>
+        <h1 class="hero-headline" id="hero-heading">
+          Seu acesso ao minicurso está liberado
+        </h1>
+        <p class="hero-sub">
+          As 4 aulas estão disponíveis abaixo. Assista no seu ritmo e chegue preparado para a imersão.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Lessons ────────────────────────────────────────────── -->
+    <section class="lessons" aria-labelledby="lessons-label">
+      <div class="container">
+        <p class="eyebrow lessons-eyebrow" id="lessons-label">Aulas do minicurso</p>
+
+        <div class="lessons-grid">
+
+          <article class="lesson-card">
+            <div class="embed-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_1"
+                title="Aula 1 — O que é o distinguishing e por que ele importa"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="lesson-body">
+              <p class="lesson-number">Aula 01</p>
+              <h2 class="lesson-title">O que é o distinguishing e por que ele importa</h2>
+              <p class="lesson-desc">Teses vinculantes, o conceito de distinção e por que isso é uma ferramenta estratégica para o advogado.</p>
+            </div>
+          </article>
+
+          <article class="lesson-card">
+            <div class="embed-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_2"
+                title="Aula 2 — Como o TRT usa (e abusa) do distinguishing"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="lesson-body">
+              <p class="lesson-number">Aula 02</p>
+              <h2 class="lesson-title">Como o TRT usa (e abusa) do distinguishing</h2>
+              <p class="lesson-desc">Quando a distinção é legítima, quando ela prejudica seu cliente e como identificar essa diferença.</p>
+            </div>
+          </article>
+
+          <article class="lesson-card">
+            <div class="embed-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_3"
+                title="Aula 3 — Como contestar o distinguishing no Recurso de Revista"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="lesson-body">
+              <p class="lesson-number">Aula 03</p>
+              <h2 class="lesson-title">Como contestar o distinguishing no Recurso de Revista</h2>
+              <p class="lesson-desc">A estratégia para levar o argumento ao TST e estruturar a peça corretamente.</p>
+            </div>
+          </article>
+
+          <article class="lesson-card">
+            <div class="embed-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_4"
+                title="Aula 4 — Cases reais e simulação prática"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="lesson-body">
+              <p class="lesson-number">Aula 04</p>
+              <h2 class="lesson-title">Cases reais e simulação prática</h2>
+              <p class="lesson-desc">Análise de decisões do TST e checklist completo para aplicar no seu caso.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Imersão CTA ────────────────────────────────────────── -->
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <p class="eyebrow cta-eyebrow">Próximo passo</p>
+        <h2 class="cta-title" id="cta-heading">Imersão ao vivo — 27 de junho</h2>
+        <p class="cta-body">
+          Depois das aulas, chegou a hora de praticar ao vivo. Na imersão você vai montar os argumentos do zero, com acompanhamento em tempo real.
+        </p>
+        <a
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Imers%C3%A3o+ao+vivo+%E2%80%93+Distinguishing+no+TST&dates=20250627%2F20250628"
+          class="cta-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Salvar na agenda do Google
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Reminder banner ───────────────────────────────────── -->
+    <div class="reminder" role="note" aria-label="Lembrete de inscrição">
+      <div class="container">
+        <div class="reminder-inner">
+          <p class="reminder-text">
+            <strong>Você já está inscrito na imersão.</strong> Não precisa fazer mais nada — só comparecer no dia 27 de junho. Marque na agenda e chegue com as aulas assistidas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">Distinguishing no TST &middot; Minicurso preparatório</p>
+    </div>
+  </footer>
+
+</body>
+</html>
