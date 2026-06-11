@@ -210,39 +210,84 @@
       }
     }
 
+    /* ── Lessons headline ──────────────────────────────────────── */
+
+    .lessons-headline {
+      font-family: "Raleway", sans-serif;
+      font-size: clamp(22px, 3.2vw, 34px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      max-width: 32ch;
+      margin-bottom: 48px;
+    }
+
     /* ── CTA section ───────────────────────────────────────────── */
 
     .cta {
       margin-top: 80px;
-      padding-top: 88px;
+      padding-top: 72px;
       padding-bottom: 80px;
       background-color: #1A1A1A;
       border-top: 6px solid #E0201F;
     }
 
-    .cta-eyebrow {
-      margin-bottom: 20px;
+    .cta-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .cta-text {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .cta-visual {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .cta-logo {
+      display: block;
+      height: 52px;
+      width: auto;
+      margin-bottom: 36px;
     }
 
     .cta-title {
       font-family: "Raleway", sans-serif;
-      font-size: clamp(22px, 3.5vw, 38px);
+      font-size: clamp(22px, 3.5vw, 36px);
       font-weight: 700;
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       color: #FFFFFF;
-      max-width: 26ch;
-      margin-bottom: 18px;
+      margin-bottom: 28px;
+    }
+
+    .cta-mockup {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .cta-body {
       font-family: "Raleway", sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 400;
       line-height: 1.7;
-      color: #AAAAAA;
-      max-width: 56ch;
-      margin-bottom: 40px;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .cta-body:last-of-type {
+      margin-bottom: 36px;
+    }
+
+    .cta-no-recording {
+      font-weight: 700;
+      color: #E0201F;
     }
 
     .cta-btn {
@@ -276,6 +321,28 @@
     }
 
     @media (min-width: 768px) {
+      .cta .container {
+        max-width: 1200px;
+        padding: 0 48px;
+      }
+
+      .cta-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 56px;
+      }
+
+      .cta-text {
+        order: 1;
+        flex: 0 0 42%;
+      }
+
+      .cta-visual {
+        order: 2;
+        flex: 1 1 0;
+        width: auto;
+      }
+
       .cta-btn {
         display: inline-block;
         width: auto;
@@ -347,9 +414,10 @@
     </section>
 
     <!-- ── Lessons ────────────────────────────────────────────── -->
-    <section class="lessons" aria-labelledby="lessons-label">
+    <section class="lessons" aria-labelledby="lessons-heading">
       <div class="container">
-        <p class="eyebrow lessons-eyebrow" id="lessons-label">Aulas do minicurso</p>
+        <p class="eyebrow lessons-eyebrow">Aulas do minicurso</p>
+        <h2 class="lessons-headline" id="lessons-heading">Assista às 4 aulas antes da imersão ao vivo</h2>
 
         <div class="lessons-grid">
 
@@ -428,19 +496,32 @@
     <!-- ── Imersão CTA ────────────────────────────────────────── -->
     <section class="cta" aria-labelledby="cta-heading">
       <div class="container">
-        <p class="eyebrow cta-eyebrow">Próximo passo</p>
-        <h2 class="cta-title" id="cta-heading">Imersão ao vivo — 27 de junho</h2>
-        <p class="cta-body">
-          Depois das aulas, chegou a hora de praticar ao vivo. Na imersão você vai montar os argumentos do zero, com acompanhamento em tempo real.
-        </p>
-        <a
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Imers%C3%A3o+ao+vivo+%E2%80%93+Distinguishing+no+TST&dates=20250627%2F20250628"
-          class="cta-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Salvar na agenda do Google
-        </a>
+        <div class="cta-inner">
+
+          <div class="cta-text">
+            <img src="logo.svg" alt="Imersão — A Fórmula do Recurso de Revista" class="cta-logo">
+            <h2 class="cta-title" id="cta-heading">Já assistiu o minicurso? Então chegou a hora de se aprofundar.</h2>
+            <p class="cta-body">
+              Dentro das aulas da Imersão, você aprenderá a verdadeira fórmula para elaborar um RR com altas chances de provimento e, consequentemente, receber maiores honorários em ações julgadas pelo TST.
+            </p>
+            <p class="cta-body">
+              Para garantir a sua presença nesta imersão que <strong class="cta-no-recording">não ficará gravada,</strong> toque no botão abaixo e salve o compromisso na sua Agenda do Google:
+            </p>
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Imers%C3%A3o+ao+vivo+%E2%80%93+Distinguishing+no+TST&dates=20250627%2F20250628"
+              class="cta-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🗓️ Marcar compromisso na Google Agenda
+            </a>
+          </div>
+
+          <div class="cta-visual">
+            <img src="Mac Studio.png" alt="Prévia da imersão ao vivo" class="cta-mockup">
+          </div>
+
+        </div>
       </div>
     </section>
 
